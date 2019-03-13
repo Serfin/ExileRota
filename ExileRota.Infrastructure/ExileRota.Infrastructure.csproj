@@ -106,16 +106,25 @@
     <Compile Include="DTO\JwtDto.cs" />
     <Compile Include="DTO\RotationDto.cs" />
     <Compile Include="DTO\UserDto.cs" />
-    <Compile Include="EntityFramework\UserContext.cs" />
+    <Compile Include="EntityFramework\PoeRotaContext.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Migrations\201903101700163_Create User table.cs" />
     <Compile Include="Migrations\201903101700163_Create User table.Designer.cs">
       <DependentUpon>201903101700163_Create User table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903131912207_Added Rotation table.cs" />
+    <Compile Include="Migrations\201903131912207_Added Rotation table.Designer.cs">
+      <DependentUpon>201903131912207_Added Rotation table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903132014379_Added FK in Rotation table.cs" />
+    <Compile Include="Migrations\201903132014379_Added FK in Rotation table.Designer.cs">
+      <DependentUpon>201903132014379_Added FK in Rotation table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\InMemoryUserRepository.cs" />
     <Compile Include="Repositories\InMemoryRotationRepository.cs" />
+    <Compile Include="Repositories\RotationRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Services\Encrypter.cs" />
     <Compile Include="Services\IEncrypter.cs" />
@@ -143,6 +152,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903101700163_Create User table.resx">
       <DependentUpon>201903101700163_Create User table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903131912207_Added Rotation table.resx">
+      <DependentUpon>201903131912207_Added Rotation table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903132014379_Added FK in Rotation table.resx">
+      <DependentUpon>201903132014379_Added FK in Rotation table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
