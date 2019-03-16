@@ -27,11 +27,12 @@ namespace ExileRota.Core.Domain
         [ForeignKey("User")]
         public Guid Creator { get; protected set; }
 
-        public Guid RotationId { get; protected set; }
+        public virtual Guid RotationId { get; protected set; }
         public string League { get; protected set; }
         public string Type { get; protected set; }
         public int? Spots { get; protected set; }
-        public IEnumerable<User> Members
+
+        public ICollection<User> Members
         {
             get => _members;
             protected set => _members = new HashSet<User>();

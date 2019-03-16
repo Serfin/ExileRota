@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ExileRota.Core.Domain
 {
@@ -30,6 +31,8 @@ namespace ExileRota.Core.Domain
         public string Role { get; protected set; }
         public DateTime CreatedAt { get; protected set; }
         public DateTime UpdatedAt { get; protected set; }
+
+        public virtual ICollection<Rotation> Rotations { get; set; }
 
         private void SetEmail(string email)
         {

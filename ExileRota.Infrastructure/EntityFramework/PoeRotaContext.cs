@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using ExileRota.Core.Domain;
 
 namespace ExileRota.Infrastructure.EntityFramework
@@ -15,15 +16,23 @@ namespace ExileRota.Infrastructure.EntityFramework
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            var userBuilder = modelBuilder.Entity<User>();
-            userBuilder.HasKey(x => x.UserId);
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            var rotationBuilder = modelBuilder.Entity<Rotation>();
-            rotationBuilder.HasKey(x => x.RotationId);
+            modelBuilder.Entity<User>()
+                .HasKey(x => x.UserId);
 
-            //modelBuilder.Entity<Rotation>()
-            //    .HasRequired(x => x.Creator)
-            //    .WithRequiredPrincipal(y =);
+            modelBuilder.Entity<Rotation>()
+                .HasKey(x => x.RotationId);
+
+            modelBuilder.Entity<Rotation>()
+                .HasMany<User>(x => x.Members)
+                .WithMany(x => x.Rotations)
+                .Map(x =>
+                {
+                    x.MapLeftKey("RotationID");
+                    x.MapRightKey("UserID");
+                    x.ToTable("Members");
+                });
         }
     }
 }
