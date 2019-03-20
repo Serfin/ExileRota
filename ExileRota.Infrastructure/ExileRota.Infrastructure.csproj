@@ -108,9 +108,10 @@
     <Compile Include="DTO\UserDto.cs" />
     <Compile Include="EntityFramework\PoeRotaContext.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
-    <Compile Include="Migrations\201903161946401_Added Rotation table with one-to-one Creator relation and many-to-many membesr relation..cs" />
-    <Compile Include="Migrations\201903161946401_Added Rotation table with one-to-one Creator relation and many-to-many membesr relation..Designer.cs">
-      <DependentUpon>201903161946401_Added Rotation table with one-to-one Creator relation and many-to-many membesr relation..cs</DependentUpon>
+    <Compile Include="Migrations\201903101700163_Create User table.cs" />
+    <Compile Include="Migrations\201903202039363_Create Rotation table with one-to-one relation %28Creator - userId%29 and many-to-many relation %28Members - userId%29.cs" />
+    <Compile Include="Migrations\201903202039363_Create Rotation table with one-to-one relation %28Creator - userId%29 and many-to-many relation %28Members - userId%29.Designer.cs">
+      <DependentUpon>201903202039363_Create Rotation table with one-to-one relation %28Creator - userId%29 and many-to-many relation %28Members - userId%29.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -142,8 +143,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903161946401_Added Rotation table with one-to-one Creator relation and many-to-many membesr relation..resx">
-      <DependentUpon>201903161946401_Added Rotation table with one-to-one Creator relation and many-to-many membesr relation..cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903202039363_Create Rotation table with one-to-one relation %28Creator - userId%29 and many-to-many relation %28Members - userId%29.resx">
+      <DependentUpon>201903202039363_Create Rotation table with one-to-one relation %28Creator - userId%29 and many-to-many relation %28Members - userId%29.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

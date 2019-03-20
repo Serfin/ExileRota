@@ -3,7 +3,7 @@ namespace ExileRota.Infrastructure.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddedRotationtablewithonetooneCreatorrelationandmanytomanymembesrrelation : DbMigration
+    public partial class CreateRotationtablewithonetoonerelationCreatoruserIdandmanytomanyrelationMembersuserId : DbMigration
     {
         public override void Up()
         {

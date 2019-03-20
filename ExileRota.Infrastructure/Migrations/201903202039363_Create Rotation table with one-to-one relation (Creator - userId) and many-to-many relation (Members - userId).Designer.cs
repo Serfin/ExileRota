@@ -7,13 +7,13 @@ namespace ExileRota.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddedRotationtablewithonetooneCreatorrelationandmanytomanymembesrrelation : IMigrationMetadata
+    public sealed partial class CreateRotationtablewithonetoonerelationCreatoruserIdandmanytomanyrelationMembersuserId : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedRotationtablewithonetooneCreatorrelationandmanytomanymembesrrelation));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateRotationtablewithonetoonerelationCreatoruserIdandmanytomanyrelationMembersuserId));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903161946401_Added Rotation table with one-to-one Creator relation and many-to-many membesr relation."; }
+            get { return "201903202039363_Create Rotation table with one-to-one relation (Creator - userId) and many-to-many relation (Members - userId)"; }
         }
         
         string IMigrationMetadata.Source
