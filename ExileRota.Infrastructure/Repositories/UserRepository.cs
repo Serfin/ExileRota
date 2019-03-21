@@ -11,9 +11,9 @@ namespace ExileRota.Infrastructure.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly UserContext _context;
+        private readonly PoeRotaContext _context;
 
-        public UserRepository(UserContext context)
+        public UserRepository(PoeRotaContext context)
         {
             _context = context;
         }

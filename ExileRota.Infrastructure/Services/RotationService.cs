@@ -57,8 +57,8 @@ namespace ExileRota.Infrastructure.Services
 
         public async Task AddMemberAsync(Guid userId, Guid rotationId)
         {
-            var userRepo = await _users.GetByIdAsync(userId);
-            if (userRepo == null)
+            var user = await _users.GetByIdAsync(userId);
+            if (user == null)
             {
                 throw new Exception("User with this ID does not exist.");
             }
@@ -69,13 +69,14 @@ namespace ExileRota.Infrastructure.Services
                 throw new Exception("Rotation with this ID does not exist.");
             }
 
-            rotation.AddMember(userRepo);
+            rotation.AddMember(user);
+            await _rotations.UpdateAsync(rotation);
         }
 
         public async Task DeleteMemberAsync(Guid userId, Guid rotationId)
         {
-            var userRepo = await _users.GetByIdAsync(userId);
-            if (userRepo == null)
+            var user = await _users.GetByIdAsync(userId);
+            if (user == null)
             {
                 throw new Exception("User with this ID does not exist.");
             }
@@ -86,7 +87,8 @@ namespace ExileRota.Infrastructure.Services
                 throw new Exception("Rotation with this ID does not exist.");
             }
 
-            rotation.DeleteMember(userRepo);
+            rotation.DeleteMember(user);
+            await _rotations.UpdateAsync(rotation);
         }
 
         public async Task DeleteRotationAsync(Guid rotationId)

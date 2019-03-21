@@ -106,16 +106,18 @@
     <Compile Include="DTO\JwtDto.cs" />
     <Compile Include="DTO\RotationDto.cs" />
     <Compile Include="DTO\UserDto.cs" />
-    <Compile Include="EntityFramework\UserContext.cs" />
+    <Compile Include="EntityFramework\PoeRotaContext.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Migrations\201903101700163_Create User table.cs" />
-    <Compile Include="Migrations\201903101700163_Create User table.Designer.cs">
-      <DependentUpon>201903101700163_Create User table.cs</DependentUpon>
+    <Compile Include="Migrations\201903202039363_Create Rotation table with one-to-one relation %28Creator - userId%29 and many-to-many relation %28Members - userId%29.cs" />
+    <Compile Include="Migrations\201903202039363_Create Rotation table with one-to-one relation %28Creator - userId%29 and many-to-many relation %28Members - userId%29.Designer.cs">
+      <DependentUpon>201903202039363_Create Rotation table with one-to-one relation %28Creator - userId%29 and many-to-many relation %28Members - userId%29.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\InMemoryUserRepository.cs" />
     <Compile Include="Repositories\InMemoryRotationRepository.cs" />
+    <Compile Include="Repositories\RotationRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Services\Encrypter.cs" />
     <Compile Include="Services\IEncrypter.cs" />
@@ -141,8 +143,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903101700163_Create User table.resx">
-      <DependentUpon>201903101700163_Create User table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903202039363_Create Rotation table with one-to-one relation %28Creator - userId%29 and many-to-many relation %28Members - userId%29.resx">
+      <DependentUpon>201903202039363_Create Rotation table with one-to-one relation %28Creator - userId%29 and many-to-many relation %28Members - userId%29.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -66,7 +66,7 @@ namespace ExileRota.Infrastructure.IoC
 
             // Register Entity Framework
 
-            builder.RegisterType<UserContext>()
+            builder.RegisterType<PoeRotaContext>()
                 .AsSelf()
                 .InstancePerLifetimeScope();
 

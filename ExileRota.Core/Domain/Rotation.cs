@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ExileRota.Core.Domain
 {
@@ -16,12 +17,22 @@ namespace ExileRota.Core.Domain
             CreatedAt = DateTime.UtcNow;
         }
 
-        public Guid RotationId { get; protected set; }
+        protected Rotation()
+        {
+
+        }
+
+        // Entity Framework one-to-one relation class
+        public User User { get; set; }
+        [ForeignKey("User")]
         public Guid Creator { get; protected set; }
+
+        public virtual Guid RotationId { get; protected set; }
         public string League { get; protected set; }
         public string Type { get; protected set; }
         public int? Spots { get; protected set; }
-        public IEnumerable<User> Members
+
+        public ICollection<User> Members
         {
             get => _members;
             protected set => _members = new HashSet<User>();
