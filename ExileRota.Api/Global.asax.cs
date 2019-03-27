@@ -1,5 +1,4 @@
 ﻿using System.Web.Http;
-using ExileRota.Infrastructure.IoC;
 
 namespace ExileRota.Api
 {

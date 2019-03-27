@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Http;
 using ExileRota.Infrastructure.Commands;
 using ExileRota.Infrastructure.Commands.Account;
-using ExileRota.Infrastructure.Services;
 
 namespace ExileRota.Api.Controllers
 {

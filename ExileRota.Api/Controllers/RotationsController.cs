@@ -21,6 +21,7 @@ namespace ExileRota.Api.Controllers
         }
 
         //GET /rotations
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IEnumerable<RotationDto>> GetAll()
             => await _rotationService.GetAllAsync();

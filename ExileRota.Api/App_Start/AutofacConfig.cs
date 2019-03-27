@@ -1,15 +1,15 @@
 ﻿using System.Reflection;
+using System.Runtime.Caching;
 using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
-using ExileRota.Api;
 using ExileRota.Core.Repositories;
 using ExileRota.Infrastructure.CommandHandlers;
 using ExileRota.Infrastructure.Commands;
 using ExileRota.Infrastructure.EntityFramework;
 using ExileRota.Infrastructure.Services;
 
-namespace ExileRota.Infrastructure.IoC
+namespace ExileRota.Api
 {
     public static class AutofacConfig
     {
@@ -69,6 +69,11 @@ namespace ExileRota.Infrastructure.IoC
             builder.RegisterType<PoeRotaContext>()
                 .AsSelf()
                 .InstancePerLifetimeScope();
+
+            // Register memory chache
+
+            builder.RegisterInstance(new MemoryCache("jwt"))
+                .SingleInstance();
 
             // Resolve dependency
 
